@@ -25,22 +25,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.11.0"
-  auto_size_text:
-    dependency: transitive
-    description:
-      name: auto_size_text
-      sha256: "3f5261cd3fb5f2a9ab4e2fc3fba84fd9fcaac8821f20a1d4e71f557521b22599"
-      url: "https://pub.dev"
-    source: hosted
-    version: "3.0.0"
-  badges:
-    dependency: transitive
-    description:
-      name: badges
-      sha256: a7b6bbd60dce418df0db3058b53f9d083c22cdb5132a052145dc267494df0b84
-      url: "https://pub.dev"
-    source: hosted
-    version: "3.1.2"
   boolean_selector:
     dependency: transitive
     description:
@@ -105,14 +89,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "3.0.3"
-  cupertino_icons:
-    dependency: "direct main"
-    description:
-      name: cupertino_icons
-      sha256: d57953e10f9f8327ce64a508a355f0b1ec902193f66288e8cb5070e7c47eeb2d
-      url: "https://pub.dev"
-    source: hosted
-    version: "1.0.6"
   fake_async:
     dependency: transitive
     description:
@@ -158,14 +134,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.0.3"
-  flutter_side_menu:
-    dependency: "direct main"
-    description:
-      name: flutter_side_menu
-      sha256: "939cbb4532e8972115d18b058a69dcb9727249d0694bb3fdef1c958dbf48ed83"
-      url: "https://pub.dev"
-    source: hosted
-    version: "0.4.0"
   flutter_slider_drawer:
     dependency: "direct main"
     description:
@@ -360,14 +328,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.3.2"
-  shrink_sidemenu:
-    dependency: "direct main"
-    description:
-      name: shrink_sidemenu
-      sha256: "556436717d004ed4573522dcc8772da50f4b7ed3b3a238c0c0e11bc265a0c95a"
-      url: "https://pub.dev"
-    source: hosted
-    version: "2.0.0+2-null-safety"
   sky_engine:
     dependency: transitive
     description: flutter

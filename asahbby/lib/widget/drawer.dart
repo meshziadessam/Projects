@@ -65,14 +65,28 @@ class Drawerwidget extends StatelessWidget {
             alignment: Alignment.bottomLeft,
             child: Padding(
                 padding: const EdgeInsets.only(bottom: 20.0),
-                child: Row(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text('The game issued by ',
-                        style: TextStyle(
-                            color: Colors.white, fontWeight: FontWeight.bold)),
-                    Text('Ziad Essam',
-                        style: TextStyle(
-                            color: Colors.white, fontStyle: FontStyle.italic)),
+                    Row(
+                      children: [
+                        Text('The game issued by ',
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold)),
+                        Text('Ziad Essam',
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontStyle: FontStyle.italic)),
+                      ],
+                    ),
+                    Text(
+                      'version 2.2',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 10,
+                      ),
+                    ),
                   ],
                 )),
           ),

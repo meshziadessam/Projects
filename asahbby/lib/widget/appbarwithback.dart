@@ -15,7 +15,6 @@ class backTop_Of_Page extends StatelessWidget {
       child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
         GestureDetector(
           onTap: () {
-          
             Navigator.pop(context);
           },
           child: Container(
@@ -36,7 +35,6 @@ class backTop_Of_Page extends StatelessWidget {
         ),
         GestureDetector(
           onTap: () {
-        
             Navigator.push(
                 context,
                 MaterialPageRoute(
@@ -46,7 +44,6 @@ class backTop_Of_Page extends StatelessWidget {
           child: Image.asset(
             'assets/images/LOGO.png',
             width: 80,
-
           ),
         )
       ]),

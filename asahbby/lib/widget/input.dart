@@ -1,9 +1,13 @@
-import 'package:Asahby/widget/CardGame.dart';
 import 'package:flutter/material.dart';
-
 import '../player.dart';
+import 'CardGame.dart';
 
 class PlayerInput extends StatefulWidget {
+  final List<Player>? players;
+  final void Function(List<Player>)? onPlayersUpdated;
+
+  const PlayerInput({Key? key, this.players, this.onPlayersUpdated})
+      : super(key: key);
   @override
   _PlayerInputState createState() => _PlayerInputState();
 }
@@ -22,27 +26,31 @@ class _PlayerInputState extends State<PlayerInput> {
     ),
     labelStyle: TextStyle(color: Color(0xFFFBAB2A)),
     hintStyle: TextStyle(color: Color(0xFFFBAB2A)),
-    suffixIcon: Icon(Icons.add),
   );
+
+  @override
+  void initState() {
+    super.initState();
+    players = widget.players ?? [];
+  }
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
         Container(
-          width: 350,
+          width: MediaQuery.of(context).size.width * 0.9,
           child: TextField(
             controller: controller,
             decoration: _inputDecoration,
             style: TextStyle(color: Colors.white),
-            onChanged: (value) {
-              // Handle text change if needed
-            },
+            onChanged: (value) {},
             onSubmitted: (value) {
               if (controller.text.isNotEmpty) {
                 setState(() {
                   players.add(Player(name: controller.text));
                   controller.clear();
+                  widget.onPlayersUpdated?.call(players);
                 });
               }
             },
@@ -55,7 +63,7 @@ class _PlayerInputState extends State<PlayerInput> {
                 Border.all(color: Color.fromARGB(255, 51, 38, 117), width: 1),
             borderRadius: BorderRadius.circular(10),
           ),
-          height: 400, // Fixed height or adjust as needed
+          height: MediaQuery.of(context).size.height * 0.5,
           child: ListView.builder(
             itemCount: players.length,
             itemBuilder: (context, index) {
@@ -66,10 +74,11 @@ class _PlayerInputState extends State<PlayerInput> {
                 ),
                 trailing: IconButton(
                   icon: Icon(Icons.delete),
-                  color: Colors.white,
+                  color: Colors.orange,
                   onPressed: () {
                     setState(() {
                       players.removeAt(index);
+                      widget.onPlayersUpdated?.call(players);
                     });
                   },
                 ),
@@ -77,11 +86,9 @@ class _PlayerInputState extends State<PlayerInput> {
             },
           ),
         ),
-        SizedBox(
-          height: 40,
-        ),
+        SizedBox(height: 40),
         ElevatedButton(
-          onPressed: players.isNotEmpty
+          onPressed: players.length >= 3
               ? () {
                   Navigator.push(
                     context,
@@ -116,29 +123,3 @@ class _PlayerInputState extends State<PlayerInput> {
     );
   }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

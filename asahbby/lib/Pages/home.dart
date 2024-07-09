@@ -10,6 +10,7 @@ class HomePage extends StatefulWidget {
   }) : super(key: key);
 
   @override
+  // ignore: library_private_types_in_public_api
   _HomePageState createState() => _HomePageState();
 }
 
@@ -21,7 +22,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
         key: _scaffoldKey,
-        drawer: Drawerwidget(),
+        drawer: const Drawerwidget(),
         backgroundColor: Colors.black,
         body: SingleChildScrollView(
           child: Stack(
@@ -38,11 +39,11 @@ class _HomePageState extends State<HomePage> {
                         child: Container(
                           width: 50,
                           height: 50,
-                          decoration: BoxDecoration(
+                          decoration:const BoxDecoration(
                             shape: BoxShape.circle,
                             color: Color.fromARGB(255, 251, 167, 42),
                           ),
-                          child: Center(
+                          child:const Center(
                             child: Icon(
                               Icons.menu,
                               color: Color.fromARGB(255, 51, 38, 117),
@@ -52,7 +53,6 @@ class _HomePageState extends State<HomePage> {
                       ),
                       GestureDetector(
                         onTap: () {
-                 
                           Navigator.push(
                               context,
                               MaterialPageRoute(
@@ -62,7 +62,6 @@ class _HomePageState extends State<HomePage> {
                         child: Image.asset(
                           'assets/images/LOGO.png',
                           width: 80,
-                      
                         ),
                       )
                     ]),
@@ -90,12 +89,11 @@ class _HomePageState extends State<HomePage> {
                                   builder: (context) => SecondRoute(),
                                 ),
                               );
-                            
                             },
                             style: ElevatedButton.styleFrom(
                               backgroundColor:
-                                  Color.fromARGB(255, 251, 167, 42),
-                              minimumSize: Size(200, 60),
+                               const   Color.fromARGB(255, 251, 167, 42),
+                              minimumSize: const Size(200, 60),
                             ),
                             child: const Text(
                               'Play Now',

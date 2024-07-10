@@ -1,0 +1,1 @@
+ D:\\asahbycardgame\\.dart_tool\\flutter_build\\1c8e10d2489178b43d6d60191a6659b5\\native_assets.yaml: 
